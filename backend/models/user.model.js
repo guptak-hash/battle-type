@@ -18,8 +18,8 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Please enter a password'],
     minlength: [6, 'Password must be at least 6 characters'],
+    required: function() { return !this.githubId }
     // select: false // Never return password in queries
   },
   avatar: {
@@ -37,6 +37,16 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'admin','premium'],
     default: 'user'
   },
+   githubId: {
+    type: String,
+    unique: true,
+    sparse: true // Allows null values without violating unique constraint
+  },
+   provider: {
+    type: String,
+    enum: ['local', 'github'],
+    default: 'local'
+  },
   createdAt: {
     type: Date,
     default: Date.now
@@ -45,5 +55,6 @@ const userSchema = new mongoose.Schema({
   resetPasswordExpire: Date
 });
 
+const UserModel=mongoose.model('user',userSchema)
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = UserModel
