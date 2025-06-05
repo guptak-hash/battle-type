@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please enter a password'],
     minlength: [6, 'Password must be at least 6 characters'],
-    select: false // Never return password in queries
+    // select: false // Never return password in queries
   },
   avatar: {
     public_id: {

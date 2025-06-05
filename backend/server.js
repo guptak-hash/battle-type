@@ -24,7 +24,7 @@ app.use((req,res)=>{
 res.status(500).json({msg: 'Undefined route'})
 })
 const PORT=process.env.PORT || 5000
-console.log(`port >> ${PORT}`)
+
 app.listen(PORT,()=>{
     console.log('Server started at port',PORT);
 })
