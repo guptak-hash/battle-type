@@ -1,9 +1,15 @@
 require('dotenv').config();
 const express=require('express');
+const UserRouter = require('./routes/user.routes');
+const connectDB = require('./config/db');
 
 const app=express();
 
+connectDB(); // mongodb connection
+
 app.use(express.json());
+
+app.use('/api',UserRouter)
 
 app.get('/test',(req,res)=>{
     try{
