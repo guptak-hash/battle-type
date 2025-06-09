@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useGameContext } from "../context/GameContext";
-import { API_BASE_URL } from "../config";
+
 
 export function Leaderboard() {
   const { gameFinished } = useGameContext();
@@ -11,9 +11,11 @@ export function Leaderboard() {
     async function fetchAndSetRankings() {
       try {
         // Get all scores
-        const response = await axios.get(`${API_BASE_URL}/api/score`);
+        const URL = import.meta.env.VITE_API_BASE_URL
+        console.log(URL)
+        const response = await axios.get(`${URL}/api/score`);
         const dataArray = response.data.data;
-      // console.log(dataArray)
+      console.log(response)
         // Create a map to store highest score for each user
         const userHighestScores = new Map();
         
