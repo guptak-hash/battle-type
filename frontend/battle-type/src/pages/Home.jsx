@@ -79,7 +79,7 @@ export default function LandingPage() {
         {/* Header */}
         <header className="p-6">
           <nav className="flex justify-between items-center max-w-6xl mx-auto">
-            <div className="text-2xl font-black text-[#323232]">TypeFast</div>
+            <div className="text-2xl font-black text-[#323232]"> <Link to="/">TypeFast</Link></div>
             <div className="flex gap-4">
               <Link
                 to="/signup"
