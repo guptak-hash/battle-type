@@ -98,10 +98,10 @@ export default function LandingPage() {
         </header>
 
         {/* Hero Section */}
-        <main className="flex-1 flex items-center justify-center px-6">
+        <main className="flex-1 flex items-center justify-center px-6 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white/90 backdrop-blur-sm border-2 border-[#323232] rounded-lg shadow-[8px_8px_0px_#323232] p-8 mb-8">
-              <h1 className="text-6xl md:text-8xl font-black text-[#323232] mb-6 leading-tight">
+              <h1 className="text-6xl md:text-8xl font-black text-[#323232] mb-6 leading-tight inline-block">
                 TYPE
                 <span className="text-[#2d8cf0]">FAST</span>
               </h1>
