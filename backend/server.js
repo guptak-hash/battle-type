@@ -40,7 +40,6 @@ app.listen(PORT, async () => {
     try {
         await connectDB(); // mongodb connection
         console.log('Server started at port', PORT);
-        console.log('MongoDB connected successfully');
     } catch (error) {
         console.error('Failed to connect to MongoDB:', error);
     }
