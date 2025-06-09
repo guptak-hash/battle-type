@@ -12,7 +12,6 @@ UserRouter.post('/login', loginUser);
 // get user profile
 UserRouter.get('/profile', getProfile);
 
-// get user profile
-UserRouter.get('/profile', getProfile);
+
 
 module.exports = UserRouter;

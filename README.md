@@ -89,20 +89,21 @@ backend/
 
 1. Clone the repository:
 \`\`\`bash
-git clone https://github.com/yourusername/battle-type.git
-cd battle-type
+Clone the repository: ``` git clone https://github.com/yourusername/battle-type.git cd battle-type ```
+
+ ``` cd battle-type ```
 \`\`\`
 
 2. Install backend dependencies:
 \`\`\`bash
-cd backend
-npm install
+ ```cd backend```
+```npm install```
 \`\`\`
 
 3. Install frontend dependencies:
 \`\`\`bash
-cd ../frontend/battle-type
-npm install
+```cd ../frontend/battle-type```
+```npm install```
 \`\`\`
 
 4. Set up environment variables:
@@ -110,23 +111,26 @@ Create `.env` files in both backend and frontend directories with necessary conf
 
 Backend `.env`:
 \`\`\`
-MONGO_URL=your_mongodb_url
+```MONGO_URL=your_mongodb_url
 JWT_SECRET_KEY=your_jwt_secret
 PORT=8000
+```
 \`\`\`
 
 5. Start the development servers:
 
 Backend:
 \`\`\`bash
-cd backend
-npm run dev
+```cd backend
+npm run dev 
+```
 \`\`\`
 
 Frontend:
 \`\`\`bash
-cd frontend/battle-type
+```cd frontend/battle-type
 npm run dev
+```
 \`\`\`
 
 ## 🔧 Configuration
