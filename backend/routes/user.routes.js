@@ -1,15 +1,18 @@
-const express=require('express');
+const express = require('express');
 const hashPassword = require('../middlewares/hashPassword.middleware');
-const { addUser, loginUser } = require('../controllers/user.controllers');
-const passport=require('passport');
-const GitHubStrategy=require('passport-github2');
-const UserRouter=express.Router();
+const { addUser, loginUser, getProfile } = require('../controllers/user.controllers');
+const UserRouter = express.Router();
 
 // user signup
-UserRouter.post('/signup',hashPassword,addUser);
+UserRouter.post('/signup', hashPassword, addUser);
 
 // user login
-UserRouter.post('/login',loginUser);
+UserRouter.post('/login', loginUser);
 
+// get user profile
+UserRouter.get('/profile', getProfile);
 
-module.exports=UserRouter;
+// get user profile
+UserRouter.get('/profile', getProfile);
+
+module.exports = UserRouter;

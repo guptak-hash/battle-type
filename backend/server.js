@@ -1,30 +1,47 @@
 require('dotenv').config();
-const express=require('express');
+const express = require('express');
+const cors = require('cors');
 const UserRouter = require('./routes/user.routes');
 const connectDB = require('./config/db');
+const scoreRouter = require('./routes/scoreRoutes');
 
-const app=express();
+const app = express();
 
-connectDB(); // mongodb connection
+// Basic CORS configuration
+app.use(cors());
 
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use('/api',UserRouter)
+// Routes
+app.use('/api/user', UserRouter);
+app.use('/api/score', scoreRouter);
 
-app.get('/test',(req,res)=>{
-    try{
-    res.send('This is a test route')
-    }catch(err){
-        console.log(err.message)
-        res.status(500).json({msg: 'Something went wrong'})
+// Test route
+app.use('/test', (req, res) => {
+    try {
+        res.send('This is a test route');
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({ msg: 'Something went wrong' });
     }
 });
 
-app.use((req,res)=>{
-res.status(500).json({msg: 'Undefined route'})
-})
-const PORT=process.env.PORT || 5000
+// 404 Route
+app.use((req, res) => {
+    res.status(404).json({ msg: 'Route not found' });
+});
 
-app.listen(PORT,()=>{
-    console.log('Server started at port',PORT);
-})
+const PORT = process.env.PORT || 8000;
+
+// Start server
+app.listen(PORT, async () => {
+    try {
+        await connectDB(); // mongodb connection
+        console.log('Server started at port', PORT);
+        console.log('MongoDB connected successfully');
+    } catch (error) {
+        console.error('Failed to connect to MongoDB:', error);
+    }
+});
