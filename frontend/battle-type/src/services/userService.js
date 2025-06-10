@@ -38,7 +38,7 @@ export const userService = {
     getProfile: async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`${BASE_URL}/profile`, {
+            const response = await fetch(`${BASE_URL}/api/user/profile`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
