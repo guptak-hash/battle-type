@@ -22,20 +22,16 @@ const userData = {
 }
 
 const handleLogout = () => {
-  // Add your logout logic here (clear tokens, redirect, etc.)
   console.log("Logging out...")
-  // For now, just redirect to home
   window.location.href = "/"
 }
 
 const handleSaveProfile = () => {
-  // Add your save profile logic here
   console.log("Saving profile...")
   alert("Profile saved successfully!")
 }
 
 const handleSavePreferences = () => {
-  // Add your save preferences logic here
   console.log("Saving preferences...")
   alert("Preferences saved successfully!")
 }

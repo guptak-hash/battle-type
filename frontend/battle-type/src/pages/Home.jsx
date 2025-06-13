@@ -36,7 +36,6 @@ function FloatingLetter({ letter, position, color = "#323232" }) {
   );
 }
 
-// 3D Scene Component
 function TypingScene() {
   const letters = ["T", "Y", "P", "E", "F", "A", "S", "T"];
 
